@@ -1,0 +1,32 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Main_UI/Main_Button.uss?fileID=7433441132597879392&amp;guid=81cd3e55cea4f416fb99831db272c716&amp;type=3#Main_Button" />
+    <ui:VisualElement name="Container" tabindex="0" style="flex-grow: 1; background-color: rgb(133, 178, 118); -unity-font: url(&quot;project://database/Assets/Main_UI/Font/CookieRun%20Regular.ttf?fileID=12800000&amp;guid=9104c640d24ea420eaba3768391befa1&amp;type=3#CookieRun Regular&quot;);">
+        <ui:VisualElement name="Title_Container" style="flex-grow: 1; width: 100%; height: 30%; align-items: center; justify-content: center;">
+            <ui:Label tabindex="-1" text="UJAGAME" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title_Label" style="width: 70%; height: 60%; color: rgb(255, 255, 255); -unity-text-align: middle-center; font-size: 160px; -unity-font-style: bold; -unity-font-definition: initial; letter-spacing: 20px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Body_Container" style="flex-grow: 1; width: 100%; height: 60%; flex-direction: row; justify-content: flex-start;">
+            <ui:VisualElement name="Button_Container" style="flex-grow: 1; width: 45%; height: 100%; align-items: center; justify-content: space-around; position: absolute;">
+                <ui:Button text="QUIZ" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Quiz_Button" class="Main_Button" style="-unity-font-definition: initial;" />
+                <ui:Button text="SIMULTAION" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Simulation_Button" class="Main_Button" style="justify-content: flex-start; -unity-font-definition: initial; letter-spacing: 10px;" />
+                <ui:Button text="EXIT" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Exit_Button" class="Main_Button" style="justify-content: flex-start; -unity-font-definition: initial;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Foot_Container" style="flex-grow: 1; width: 100%; height: 10%; justify-content: center; align-self: auto; align-items: flex-end; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+            <ui:Button text="SET" parse-escape-sequences="true" display-tooltip-when-elided="true" name="OpenOption_Button" class="Option_Button" style="-unity-font-style: normal; color: rgba(27, 27, 27, 0.9); right: 4%; bottom: 40px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Option_Container" style="flex-grow: 1; width: 100%; height: 100%; position: absolute; align-items: center; justify-content: center; display: none; top: 0; left: 0; -unity-font-definition: initial;">
+            <ui:VisualElement name="Screen" style="flex-grow: 1; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);" />
+            <ui:VisualElement name="OptionMenu" style="flex-grow: 1; position: absolute; width: 70%; height: 70%; background-color: rgba(188, 188, 188, 0.8); align-items: center; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; border-left-color: rgb(94, 94, 94); border-right-color: rgb(94, 94, 94); border-top-color: rgb(94, 94, 94); border-bottom-color: rgb(94, 94, 94); justify-content: center; top: auto; left: auto;">
+                <ui:VisualElement name="OptionMenuTitle" style="flex-grow: 1; position: absolute; width: 50%; align-items: center; height: 80px; border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-right-radius: 40px; border-bottom-left-radius: 40px; -unity-text-align: middle-center; background-color: rgb(188, 188, 188); bottom: 95%; justify-content: center; border-left-color: rgb(72, 72, 72); border-right-color: rgb(72, 72, 72); border-top-color: rgb(72, 72, 72); border-bottom-color: rgb(72, 72, 72); border-top-width: 6px; border-right-width: 6px; border-bottom-width: 6px; border-left-width: 6px;">
+                    <ui:Label tabindex="-1" text="OPTION" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" style="width: 100%; height: 100%; font-size: 50px; -unity-font-style: bold; text-overflow: clip; -unity-text-outline-width: 3px; word-spacing: 0; -unity-paragraph-spacing: 0; letter-spacing: 50px; border-left-color: rgba(72, 72, 72, 0); border-right-color: rgba(72, 72, 72, 0); border-top-color: rgba(72, 72, 72, 0); border-bottom-color: rgba(72, 72, 72, 0); border-top-width: 6px; border-right-width: 6px; border-bottom-width: 6px; border-left-width: 6px;" />
+                </ui:VisualElement>
+                <ui:Button text="Close" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CloseOption_Button" class="Option_Button" style="width: 8%; height: 14%; position: absolute; align-self: flex-end; bottom: 90%; right: -3%;" />
+                <ui:Slider label="SOUND        " high-value="100" name="SoundSlider" direction="Horizontal" show-input-field="false" inverted="false" style="width: 70%; height: 10%; -unity-text-align: middle-center; font-size: 30px; -unity-font-style: bold; -unity-paragraph-spacing: 0; word-spacing: 0; letter-spacing: 20px; justify-content: center; align-self: flex-start; left: 8%; bottom: 10%; align-items: center;">
+                    <ui:Label tabindex="-1" text="0.0%" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SoundRatio" style="position: absolute; bottom: 80%; left: 60%;" />
+                </ui:Slider>
+                <ui:DropdownField label="RESOLUTION" name="ResolutionDropdown" style="width: 70%; height: 7%; align-self: flex-start; left: 8%; -unity-text-align: middle-center; font-size: 30px; -unity-font-style: bold; letter-spacing: 20px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="BlackPanel" style="flex-grow: 1; width: 100%; height: 100%; position: absolute; background-color: rgb(0, 0, 0); opacity: 0; display: none;" />
+    </ui:VisualElement>
+</ui:UXML>
