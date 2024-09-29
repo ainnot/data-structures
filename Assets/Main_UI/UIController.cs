@@ -181,16 +181,16 @@ public class UIController : MonoBehaviour
     {
         // Move Quiz Scene
         SoundManager.instance.PlaySE(MainButton_Sound);
-        Debug.Log("Quiz");
-        FadeOut("Quiz");
+        Debug.Log("quiz scene");
+        FadeOut("quiz scene");
     }
 
     private void SimulationButtonClicked(ClickEvent evt)
     {
         // Move Simulation Scene
         SoundManager.instance.PlaySE(MainButton_Sound);
-        Debug.Log("Simulation");
-        FadeOut("Simulation");
+        Debug.Log("simulation scene");
+        FadeOut("simulation scene");
     }
 
     private void ExitButtonClicked(ClickEvent evt)

@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/main scene.unity
+    guid: ae1d8b2fe0bd8b64e9054e9a656faf59
   - enabled: 1
-    path: Assets/Scenes/Quiz.unity
-    guid: fc1d3567d3e8f41d9a32bd9328cedd53
+    path: Assets/Scenes/quiz scene.unity
+    guid: ffd4ab63fcc7987439c5ef4199f0f1e4
   - enabled: 1
-    path: Assets/Scenes/Simulation.unity
-    guid: c5346bf9e1ecc41c6b4dac5c6fad8ef1
+    path: Assets/Scenes/simulation scene.unity
+    guid: 58031d77bb078534590bbd3b5bc981f9
   m_configObjects: {}
