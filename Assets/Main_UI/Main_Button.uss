@@ -1,12 +1,12 @@
 .Main_Button {
     justify-content: flex-start;
-    width: 70%;
+    width: 60%;
     height: 20%;
     font-size: 50px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
     border-top-width: 5px;
     border-right-width: 5px;
     border-bottom-width: 5px;
@@ -20,19 +20,22 @@
     -unity-font-definition: initial;
     letter-spacing: 20px;
     color: rgba(0, 0, 0, 0.85);
+    -unity-font: url("project://database/Assets/Main_UI/Font/CookieRun%20Regular.ttf?fileID=12800000&guid=9104c640d24ea420eaba3768391befa1&type=3#CookieRun Regular");
 }
 
 .Main_Button:hover {
-    scale: 1.05 1.05;
-    transition-duration: 0.3s, 0.1s, 0.1s, 0.1s;
-    transition-property: scale, background-color, border-color, color;
-    transition-timing-function: ease-out-elastic, ease, ease, ease;
+    scale: 1.2 1.2;
+    transition-duration: 0.3s, 0.1s, 0.1s, 0.1s, 0.3s, 0.15s;
+    transition-property: scale, background-color, border-color, color, rotate, translate;
+    transition-timing-function: ease-out-elastic, ease, ease, ease, ease, linear;
     background-color: rgb(204, 204, 204);
     border-left-color: rgb(67, 67, 67);
     border-right-color: rgb(67, 67, 67);
     border-top-color: rgb(67, 67, 67);
     border-bottom-color: rgb(67, 67, 67);
     color: rgb(27, 27, 27);
+    rotate: 0;
+    translate: 50px 0;
 }
 
 .Main_Button:active {
@@ -41,7 +44,7 @@
     transition-duration: 0.1s;
     transition-timing-function: ease;
     transition-delay: 0s;
-    scale: 1 1;
+    scale: 1.1 1.1;
 }
 
 .Option_Button {
@@ -50,10 +53,10 @@
     justify-content: flex-start;
     font-size: 25px;
     -unity-font-style: normal;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+    border-bottom-right-radius: 30%;
+    border-bottom-left-radius: 30%;
     border-top-width: 6px;
     border-right-width: 6px;
     border-bottom-width: 6px;
@@ -87,4 +90,34 @@
 .Option_Button:active {
     background-color: rgb(118, 118, 118);
     transition-duration: 0.1s;
+}
+
+.InputBox {
+    width: 60%;
+    height: 15%;
+    -unity-text-align: middle-center;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    -unity-font-style: bold;
+}
+
+.InputBox:hover {
+    border-left-color: rgb(0, 210, 255);
+    border-right-color: rgb(0, 210, 255);
+    border-top-color: rgb(0, 210, 255);
+    border-bottom-color: rgb(0, 210, 255);
 }

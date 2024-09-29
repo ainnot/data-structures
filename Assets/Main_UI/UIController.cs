@@ -4,6 +4,17 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
+
+public struct Player
+{
+    public string Name;
+
+    public Player(string NewName)
+    {
+        Name = NewName;
+    }
+}
+
 public class UIController : MonoBehaviour
 {
     // 루트
@@ -40,13 +51,23 @@ public class UIController : MonoBehaviour
     // 기본 소리 크기 
     private float DefaultSound = 50f;
 
-    // 소리 에셋 
-    public AudioSource audioSource1;
-    public AudioSource audioSource2;
+    // 소리 에셋 이름 
+    [SerializeField]
+    private string MainButton_Sound = "MainButton";
+    [SerializeField]
+    private string SubButton_Sound = "SubButton";
+
 
     private VisualElement blackPanel;
     public float fadeDuration = 4.0f; // 어두워지는 시간
-    public bool UseFadeAnimation = true; // 페이트 에니메이션 사용 여부 
+    public bool UseFadeAnimation = true; // 페이트 에니메이션 사용 여부
+
+    // 이름 입력
+    private VisualElement InputPalyerContainer;
+    private Button SubmitButton;
+    private TextField InputNameBox;
+
+    List<Player> PlayerList = new();
 
     // Start is called before the first frame update
     void Start()
@@ -116,6 +137,8 @@ public class UIController : MonoBehaviour
         SoundSlider.highValue = 100;
         SoundSlider.value = DefaultSound;
 
+        SoundManager.instance.SetSoundAmount(50f);
+
         // 사이드 라벨 
         SoundRatio = root.Q<Label>("SoundRatio");
         SoundRatio.text = DefaultSound.ToString("F1") + "%";
@@ -125,8 +148,7 @@ public class UIController : MonoBehaviour
             SoundRatio.text = SoundSlider.value.ToString("F1") + "%";
 
             // 0.0(무음) ~ 1.0(최대)
-            audioSource1.volume = evt.newValue / 100.0f;
-            audioSource2.volume = evt.newValue / 100.0f;
+            SoundManager.instance.SetSoundAmount(evt.newValue);
         });
 
         // 페이드 패널
@@ -137,12 +159,28 @@ public class UIController : MonoBehaviour
 
         // 숨김
         blackPanel.style.display = DisplayStyle.None;
+
+
+        // 이름 입력
+        InputPalyerContainer = root.Q<VisualElement>("InputPlayerContainer");
+        SubmitButton = root.Q<Button>("SubmitButton");
+        InputNameBox = root.Q<TextField>("InputNameBox");
+
+        InputPalyerContainer.style.display = DisplayStyle.Flex;
+
+        // 글자 수 제한. 
+        InputNameBox.maxLength = 15;
+        // 초기값 지정.
+        InputNameBox.value = "";
+
+        SubmitButton.RegisterCallback<ClickEvent>(SubmitButtonClicked);
+
     }
 
     private void QuizButtonClicked(ClickEvent evt)
     {
         // Move Quiz Scene
-        audioSource2.Play();
+        SoundManager.instance.PlaySE(MainButton_Sound);
         Debug.Log("Quiz");
         FadeOut("Quiz");
     }
@@ -150,7 +188,7 @@ public class UIController : MonoBehaviour
     private void SimulationButtonClicked(ClickEvent evt)
     {
         // Move Simulation Scene
-        audioSource2.Play();
+        SoundManager.instance.PlaySE(MainButton_Sound);
         Debug.Log("Simulation");
         FadeOut("Simulation");
     }
@@ -166,12 +204,32 @@ public class UIController : MonoBehaviour
     private void OnOpenButtonClicked(ClickEvent evt)
     {
         Option_Container.style.display = DisplayStyle.Flex;
-        audioSource1.Play();
+        SoundManager.instance.PlaySE(SubButton_Sound);
     }
     private void OnCloseButtonClicked(ClickEvent evt)
     {
         Option_Container.style.display = DisplayStyle.None;
-        audioSource1.Play();
+        SoundManager.instance.PlaySE(SubButton_Sound);
+    }
+
+    private void SubmitButtonClicked(ClickEvent evt)
+    {
+        // Move Quiz Scene
+        SoundManager.instance.PlaySE(SubButton_Sound);
+
+        if (InputNameBox.value != "")
+        {
+            InputPalyerContainer.style.display = DisplayStyle.None;
+            
+            PlayerList.Add(new Player(InputNameBox.value));
+
+            Debug.Log(PlayerList[0].Name);
+        }
+        else
+        {
+            Debug.Log("Empty InputBox!!");
+        }
+
     }
 
     // 해상도 설정 메서드
