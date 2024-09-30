@@ -137,7 +137,7 @@ public class UIController : MonoBehaviour
         SoundSlider.highValue = 100;
         SoundSlider.value = DefaultSound;
 
-        SoundManager.instance.SetSoundAmount(50f);
+        SoundManager.Instance.SetSoundAmount(50f);
 
         // 사이드 라벨 
         SoundRatio = root.Q<Label>("SoundRatio");
@@ -148,7 +148,7 @@ public class UIController : MonoBehaviour
             SoundRatio.text = SoundSlider.value.ToString("F1") + "%";
 
             // 0.0(무음) ~ 1.0(최대)
-            SoundManager.instance.SetSoundAmount(evt.newValue);
+            SoundManager.Instance.SetSoundAmount(evt.newValue);
         });
 
         // 페이드 패널
@@ -180,7 +180,7 @@ public class UIController : MonoBehaviour
     private void QuizButtonClicked(ClickEvent evt)
     {
         // Move Quiz Scene
-        SoundManager.instance.PlaySE(MainButton_Sound);
+        SoundManager.Instance.PlaySE(MainButton_Sound);
         Debug.Log("quiz scene");
         FadeOut("quiz scene");
     }
@@ -188,7 +188,7 @@ public class UIController : MonoBehaviour
     private void SimulationButtonClicked(ClickEvent evt)
     {
         // Move Simulation Scene
-        SoundManager.instance.PlaySE(MainButton_Sound);
+        SoundManager.Instance.PlaySE(MainButton_Sound);
         Debug.Log("simulation scene");
         FadeOut("simulation scene");
     }
@@ -204,18 +204,18 @@ public class UIController : MonoBehaviour
     private void OnOpenButtonClicked(ClickEvent evt)
     {
         Option_Container.style.display = DisplayStyle.Flex;
-        SoundManager.instance.PlaySE(SubButton_Sound);
+        SoundManager.Instance.PlaySE(SubButton_Sound);
     }
     private void OnCloseButtonClicked(ClickEvent evt)
     {
         Option_Container.style.display = DisplayStyle.None;
-        SoundManager.instance.PlaySE(SubButton_Sound);
+        SoundManager.Instance.PlaySE(SubButton_Sound);
     }
 
     private void SubmitButtonClicked(ClickEvent evt)
     {
         // Move Quiz Scene
-        SoundManager.instance.PlaySE(SubButton_Sound);
+        SoundManager.Instance.PlaySE(SubButton_Sound);
 
         if (InputNameBox.value != "")
         {
