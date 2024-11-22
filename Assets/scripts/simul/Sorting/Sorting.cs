@@ -15,7 +15,7 @@ public class Sorting
     // 교환이 일어난 횟수 
     protected int changedCount = 0;
 
-    public int ChangeCount
+    public int ChangedCount
     {
         get
         {
@@ -122,7 +122,5 @@ public class Sorting
         {
             stringList += num.ToString() + ", ";
         }
-
-        Debug.Log(stringList);
     }
 }

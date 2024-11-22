@@ -39,35 +39,42 @@ public class Quick : Sorting
                     if (list[j] < pivot)
                     {
                         i++;
-                        Swap(list, i, j);
-                        count++;
 
-                        // 교환 횟수가 변경 한도 초과 시 상태 저장 후 종료
-                        if (count > changedCount)
+                        if (i != j)
                         {
-                            changedCount++;
-                            lastList = list;
-                            changedIndex = (i, j);
-                            PrintList(list);
-                            isSorted = CheckList(list);
-                            return;
+                            Swap(list, i, j);
+                            count++;
+
+                            // 교환 횟수가 변경 한도 초과 시 상태 저장 후 종료
+                            if (count > changedCount)
+                            {
+                                changedCount++;
+                                lastList = list;
+                                changedIndex = (i, j);
+                                PrintList(list);
+                                isSorted = CheckList(list);
+                                return;
+                            }
                         }
                     }
                 }
 
-                // 피벗을 제자리에 놓음
-                Swap(list, i + 1, high);
-                count++;
-
-                // 교환 횟수가 변경 한도 초과 시 상태 저장 후 종료
-                if (count > changedCount)
+                if (i + 1 != high)
                 {
-                    changedCount++;
-                    lastList = list;
-                    changedIndex = (i + 1, high);
-                    PrintList(list);
-                    isSorted = CheckList(list);
-                    return;
+                    // 피벗을 제자리에 놓음
+                    Swap(list, i + 1, high);
+                    count++;
+
+                    // 교환 횟수가 변경 한도 초과 시 상태 저장 후 종료
+                    if (count > changedCount)
+                    {
+                        changedCount++;
+                        lastList = list;
+                        changedIndex = (i + 1, high);
+                        PrintList(list);
+                        isSorted = CheckList(list);
+                        return;
+                    }
                 }
 
                 // 피벗 인덱스

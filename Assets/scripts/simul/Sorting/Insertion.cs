@@ -22,33 +22,34 @@ public class Insertion : Sorting
 
         for (int i = 1; i < list.Count; i++)
         {
-            int current = list[i];
-            int j = i - 1;
-
-            while (j >= 0 && list[j] > current)
+            for(int j = i; j > 0; j--)
             {
-                list[j + 1] = list[j];
-                count++;
-                j--;
-
-                if (count > changedCount)
+                if (list[j] < list[j-1])
                 {
-                    // 누적 변경 횟수를 추가한다
-                    changedCount++;
+                    Swap(list, j, j-1);
 
-                    // 마지막으로 정렬이 진행된 리스트를 저장한다
-                    lastList = list;
+                    count++;
 
-                    // 마지막으로 변경된 인덱스를 저장한다
-                    changedIndex = (j + 1, j + 2);
-                    PrintList(list);
+                    if (count > changedCount)
+                    {
+                        // 누적 변경 횟수를 추가한다
+                        changedCount++;
 
-                    // 정렬이 완료 되었는지 안되었는지 확인하다
-                    isSorted = CheckList(list);
-                    return;
+                        // 마지막으로 정렬이 진행된 리스트를 저장한다
+                        lastList = list;
+
+                        // 마지막으로 변경된 인덱스를 저장한다
+                        changedIndex = (j, j-1);
+                        PrintList(list);
+
+                        // 정렬이 완료 되었는지 안되었는지 확인하다
+                        isSorted = CheckList(list);
+                        return;
+                    }
                 }
             }
-            list[j + 1] = current;
         }
+
     }
+    
 }

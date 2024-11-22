@@ -42,7 +42,7 @@ public class Bubble : Sorting
                         }
 
                         // 미지막으로 변경된 인덱스를 저장한다
-                        changedIndex = (list[j], list[j + 1]);
+                        changedIndex = (j, j + 1);
                         PrintList(list);
 
                         // 정렬이 완료 되었는지 안되었는지 확인하다
