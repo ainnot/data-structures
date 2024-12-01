@@ -66,13 +66,11 @@ public class SimulManager : MonoBehaviour
             // 정렬 변경 
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                Debug.Log("Changed");
                 sortingSelection = ((sortingSelection > 0) ? (sortingSelection - 1) : (sortingCount - 1));
                 ChangeSorting();
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                Debug.Log("Changed");
                 sortingSelection = ((sortingSelection < (sortingCount - 1)) ? (sortingSelection + 1) : 0);
                 ChangeSorting();
             }
