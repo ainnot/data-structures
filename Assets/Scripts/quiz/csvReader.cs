@@ -11,7 +11,7 @@ public class csvReader : MonoBehaviour
     [System.Serializable]
     public class Quiz
     {
-        public int quizIndex;
+        public string quizIndex;
         public string question;
         public string answer;
     }
@@ -38,10 +38,10 @@ public class csvReader : MonoBehaviour
             }
             var splitData = data.Split(',');
             Quiz quiz = new Quiz();
-            quiz.quizIndex = int.Parse(splitData[0]);
+            quiz.quizIndex = splitData[0];
             quiz.question = splitData[1];
             quiz.answer = splitData[2];
-            quizDic.Add(quiz.quizIndex.ToString(), quiz);
+            quizDic.Add(quiz.quizIndex, quiz);
             Debug.Log(quizDic.Count);
         }
     }
