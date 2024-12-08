@@ -54,7 +54,7 @@ public class Block : MonoBehaviour
     }
 
     // 이동 속도 
-    float moveSpeed = 0.03f;
+    float moveSpeed = 0.3f;
 
     // 이동 여부 
     bool isMove = false;
@@ -103,7 +103,7 @@ public class Block : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (isMove)
         {
